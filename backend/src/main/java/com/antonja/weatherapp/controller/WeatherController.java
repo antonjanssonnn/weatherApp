@@ -23,7 +23,6 @@ public class WeatherController {
 
     @GetMapping("/{city}")
     public Mono<ResponseEntity<Weather>> getWeather(@PathVariable String city) {
-        System.out.println(apiKey);
         String apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
         
         return webClient.get()
